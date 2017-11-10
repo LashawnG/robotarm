@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Robotarm Opdracht 10</title>
+	<meta charset="utf-8">
+</head>
+<body>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <script src="./robot-arm.js"></script>
+        <script>
+            // Robotarm bibliotheek inladen
+            var canvas = document.getElementById("canvas");
+            var robotArm = new RobotArm(canvas);
+
+            // Het level inladen
+            robotArm.loadLevel("exercise 10");
+            
+            // Jou instructies volgen hier 
+            var pos = 8;
+
+            for (i = 0; i < 5 ;i++) {
+
+                robotArm.grab();
+
+                for (var mr = 0; mr <= pos;  mr++) {
+                    robotArm.moveRight();
+                }
+                
+                robotArm.drop();
+
+                for (var ml = 0; ml <= (pos-1); ml++) {
+                    robotArm.moveLeft();
+                }
+
+                pos = pos-2;
+            }
+
+            
+
+            
+            robotArm.drop();
+            
+	        // De door jou opgegeven instructies uitvoeren
+	            robotArm.run();
+        </script>
+</body>
+</html>

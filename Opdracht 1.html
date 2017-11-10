@@ -1,5 +1,10 @@
+<!DOCTYPE html>
 <html>
-    <body>
+<head>
+	<title>Robotarm opdracht 1</title>
+	<meta charset="utf-8">
+</head>
+<body>
         <canvas id="canvas" width="800" height="600"></canvas>
         <script src="./robot-arm.js"></script>
         <script>
@@ -11,10 +16,13 @@
             robotArm.loadLevel("exercise 1");
             
             // Jou instructies volgen hier
-            
+            robotArm.moveRight();
+            robotArm.grab();
+            robotArm.moveLeft();
+            robotArm.drop();
             
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>
-    </body>
+</body>
 </html>
